@@ -1,0 +1,257 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\Estudiante\Desktop\PROYECTO_V3\Sistema_Epy.qsys --block-symbol-file --output-directory=C:\Users\Estudiante\Desktop\PROYECTO_V3\Sistema_Epy --family="Cyclone V" --part=5CSXFC6D6F31C6
+Progress: Loading PROYECTO_V3/Sistema_Epy.qsys
+Progress: Reading input file
+Progress: Adding CLOCK_50 [clock_source 16.1]
+Progress: Parameterizing module CLOCK_50
+Progress: Adding DUAL_CLOCK_FIFO [altera_up_avalon_video_dual_clock_buffer 16.1]
+Progress: Parameterizing module DUAL_CLOCK_FIFO
+Progress: Adding JTAG_UART [altera_avalon_jtag_uart 16.1]
+Progress: Parameterizing module JTAG_UART
+Progress: Adding NIOS2_Data [altera_nios2_gen2 16.1]
+Progress: Parameterizing module NIOS2_Data
+Progress: Adding NIOS2_NN [altera_nios2_gen2 16.1]
+Progress: Parameterizing module NIOS2_NN
+Progress: Adding NIOS2_VGA [altera_nios2_gen2 16.1]
+Progress: Parameterizing module NIOS2_VGA
+Progress: Adding PIXEL_BUFFER_DMA [altera_up_avalon_video_pixel_buffer_dma 16.1]
+Progress: Parameterizing module PIXEL_BUFFER_DMA
+Progress: Adding PLL [altera_pll 16.1]
+Progress: Parameterizing module PLL
+Progress: Adding RGB_RESAMPLER [altera_up_avalon_video_rgb_resampler 16.1]
+Progress: Parameterizing module RGB_RESAMPLER
+Progress: Adding SCALER [altera_up_avalon_video_scaler 16.1]
+Progress: Parameterizing module SCALER
+Progress: Adding SDRAM_VGA [altera_avalon_new_sdram_controller 16.1]
+Progress: Parameterizing module SDRAM_VGA
+Progress: Adding SYSTEM_ID_1 [altera_avalon_sysid_qsys 16.1]
+Progress: Parameterizing module SYSTEM_ID_1
+Progress: Adding TIMER [altera_avalon_timer 16.1]
+Progress: Parameterizing module TIMER
+Progress: Adding VGA [altera_up_avalon_video_vga_controller 16.1]
+Progress: Parameterizing module VGA
+Progress: Adding i2c_0 [altera_avalon_i2c 16.1]
+Progress: Parameterizing module i2c_0
+Progress: Adding onchip_mem2 [altera_avalon_onchip_memory2 16.1]
+Progress: Parameterizing module onchip_mem2
+Progress: Adding onchip_mem3 [altera_avalon_onchip_memory2 16.1]
+Progress: Parameterizing module onchip_mem3
+Progress: Adding onchip_men1 [altera_avalon_onchip_memory2 16.1]
+Progress: Parameterizing module onchip_men1
+Progress: Adding uart_0 [altera_avalon_uart 16.1]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Sistema_Epy.JTAG_UART: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: Sistema_Epy.PLL: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: Sistema_Epy.PLL: Able to implement PLL with user settings
+Info: Sistema_Epy.RGB_RESAMPLER: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Info: Sistema_Epy.SCALER: Change in Resolution: 320 x 240 -> 640 x 480
+Info: Sistema_Epy.SDRAM_VGA: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: Sistema_Epy.SYSTEM_ID_1: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: Sistema_Epy.SYSTEM_ID_1: Time stamp will be automatically updated when this component is generated.
+Info: Sistema_Epy.VGA: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Info: Sistema_Epy.SCALER.avalon_scaler_source/DUAL_CLOCK_FIFO.avalon_dc_buffer_sink: The source has a channel signal of 2 bits, but the sink does not. Avalon-ST Adapter will be inserted.
+Warning: Sistema_Epy.uart_0: Interrupt sender uart_0.irq is not connected to an interrupt receiver
+Warning: Sistema_Epy.uart_0: uart_0.s1 must be connected to an Avalon-MM master
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\Estudiante\Desktop\PROYECTO_V3\Sistema_Epy.qsys --synthesis=VHDL --output-directory=C:\Users\Estudiante\Desktop\PROYECTO_V3\Sistema_Epy\synthesis --family="Cyclone V" --part=5CSXFC6D6F31C6
+Progress: Loading PROYECTO_V3/Sistema_Epy.qsys
+Progress: Reading input file
+Progress: Adding CLOCK_50 [clock_source 16.1]
+Progress: Parameterizing module CLOCK_50
+Progress: Adding DUAL_CLOCK_FIFO [altera_up_avalon_video_dual_clock_buffer 16.1]
+Progress: Parameterizing module DUAL_CLOCK_FIFO
+Progress: Adding JTAG_UART [altera_avalon_jtag_uart 16.1]
+Progress: Parameterizing module JTAG_UART
+Progress: Adding NIOS2_Data [altera_nios2_gen2 16.1]
+Progress: Parameterizing module NIOS2_Data
+Progress: Adding NIOS2_NN [altera_nios2_gen2 16.1]
+Progress: Parameterizing module NIOS2_NN
+Progress: Adding NIOS2_VGA [altera_nios2_gen2 16.1]
+Progress: Parameterizing module NIOS2_VGA
+Progress: Adding PIXEL_BUFFER_DMA [altera_up_avalon_video_pixel_buffer_dma 16.1]
+Progress: Parameterizing module PIXEL_BUFFER_DMA
+Progress: Adding PLL [altera_pll 16.1]
+Progress: Parameterizing module PLL
+Progress: Adding RGB_RESAMPLER [altera_up_avalon_video_rgb_resampler 16.1]
+Progress: Parameterizing module RGB_RESAMPLER
+Progress: Adding SCALER [altera_up_avalon_video_scaler 16.1]
+Progress: Parameterizing module SCALER
+Progress: Adding SDRAM_VGA [altera_avalon_new_sdram_controller 16.1]
+Progress: Parameterizing module SDRAM_VGA
+Progress: Adding SYSTEM_ID_1 [altera_avalon_sysid_qsys 16.1]
+Progress: Parameterizing module SYSTEM_ID_1
+Progress: Adding TIMER [altera_avalon_timer 16.1]
+Progress: Parameterizing module TIMER
+Progress: Adding VGA [altera_up_avalon_video_vga_controller 16.1]
+Progress: Parameterizing module VGA
+Progress: Adding i2c_0 [altera_avalon_i2c 16.1]
+Progress: Parameterizing module i2c_0
+Progress: Adding onchip_mem2 [altera_avalon_onchip_memory2 16.1]
+Progress: Parameterizing module onchip_mem2
+Progress: Adding onchip_mem3 [altera_avalon_onchip_memory2 16.1]
+Progress: Parameterizing module onchip_mem3
+Progress: Adding onchip_men1 [altera_avalon_onchip_memory2 16.1]
+Progress: Parameterizing module onchip_men1
+Progress: Adding uart_0 [altera_avalon_uart 16.1]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: Sistema_Epy.JTAG_UART: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: Sistema_Epy.PLL: The legal reference clock frequency is 5.0 MHz..800.0 MHz
+Info: Sistema_Epy.PLL: Able to implement PLL with user settings
+Info: Sistema_Epy.RGB_RESAMPLER: RGB Resampling: 16 (bits) x 1 (planes) -> 10 (bits) x 3 (planes)
+Info: Sistema_Epy.SCALER: Change in Resolution: 320 x 240 -> 640 x 480
+Info: Sistema_Epy.SDRAM_VGA: SDRAM Controller will only be supported in Quartus Prime Standard Edition in the future release.
+Info: Sistema_Epy.SYSTEM_ID_1: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: Sistema_Epy.SYSTEM_ID_1: Time stamp will be automatically updated when this component is generated.
+Info: Sistema_Epy.VGA: Video Output Stream: Format: 640 x 480 with Color: 10 (bits) x 3 (planes) converted to 8 (bits) per color plane
+Info: Sistema_Epy.SCALER.avalon_scaler_source/DUAL_CLOCK_FIFO.avalon_dc_buffer_sink: The source has a channel signal of 2 bits, but the sink does not. Avalon-ST Adapter will be inserted.
+Warning: Sistema_Epy.uart_0: Interrupt sender uart_0.irq is not connected to an interrupt receiver
+Warning: Sistema_Epy.uart_0: uart_0.s1 must be connected to an Avalon-MM master
+Info: Sistema_Epy: Generating Sistema_Epy "Sistema_Epy" for QUARTUS_SYNTH
+Info: avalon_st_adapter: Inserting channel_adapter: channel_adapter_0
+Info: DUAL_CLOCK_FIFO: Starting Generation of the Dual Clock Buffer
+Info: DUAL_CLOCK_FIFO: "Sistema_Epy" instantiated altera_up_avalon_video_dual_clock_buffer "DUAL_CLOCK_FIFO"
+Info: JTAG_UART: Starting RTL generation for module 'Sistema_Epy_JTAG_UART'
+Info: JTAG_UART:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=Sistema_Epy_JTAG_UART --dir=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0055_JTAG_UART_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0055_JTAG_UART_gen//Sistema_Epy_JTAG_UART_component_configuration.pl  --do_build_sim=0  ]
+Info: JTAG_UART: Done RTL generation for module 'Sistema_Epy_JTAG_UART'
+Info: JTAG_UART: "Sistema_Epy" instantiated altera_avalon_jtag_uart "JTAG_UART"
+Info: NIOS2_NN: "Sistema_Epy" instantiated altera_nios2_gen2 "NIOS2_NN"
+Info: NIOS2_VGA: "Sistema_Epy" instantiated altera_nios2_gen2 "NIOS2_VGA"
+Info: PIXEL_BUFFER_DMA: Starting Generation of VGA Pixel Buffer
+Info: PIXEL_BUFFER_DMA: "Sistema_Epy" instantiated altera_up_avalon_video_pixel_buffer_dma "PIXEL_BUFFER_DMA"
+Info: PLL: "Sistema_Epy" instantiated altera_pll "PLL"
+Info: RGB_RESAMPLER: Starting Generation of Video RGB Resampler
+Info: RGB_RESAMPLER: "Sistema_Epy" instantiated altera_up_avalon_video_rgb_resampler "RGB_RESAMPLER"
+Info: SCALER: Starting Generation of Video Scaler
+Info: SCALER: "Sistema_Epy" instantiated altera_up_avalon_video_scaler "SCALER"
+Info: SDRAM_VGA: Starting RTL generation for module 'Sistema_Epy_SDRAM_VGA'
+Info: SDRAM_VGA:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=Sistema_Epy_SDRAM_VGA --dir=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0060_SDRAM_VGA_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0060_SDRAM_VGA_gen//Sistema_Epy_SDRAM_VGA_component_configuration.pl  --do_build_sim=0  ]
+Info: SDRAM_VGA: Done RTL generation for module 'Sistema_Epy_SDRAM_VGA'
+Info: SDRAM_VGA: "Sistema_Epy" instantiated altera_avalon_new_sdram_controller "SDRAM_VGA"
+Info: SYSTEM_ID_1: "Sistema_Epy" instantiated altera_avalon_sysid_qsys "SYSTEM_ID_1"
+Info: TIMER: Starting RTL generation for module 'Sistema_Epy_TIMER'
+Info: TIMER:   Generation command is [exec C:/intelFPGA/16.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA/16.1/quartus/bin64//perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=Sistema_Epy_TIMER --dir=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0062_TIMER_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0062_TIMER_gen//Sistema_Epy_TIMER_component_configuration.pl  --do_build_sim=0  ]
+Info: TIMER: Done RTL generation for module 'Sistema_Epy_TIMER'
+Info: TIMER: "Sistema_Epy" instantiated altera_avalon_timer "TIMER"
+Info: VGA: Starting Generation of VGA Controller
+Info: VGA: "Sistema_Epy" instantiated altera_up_avalon_video_vga_controller "VGA"
+Info: onchip_mem2: Starting RTL generation for module 'Sistema_Epy_onchip_mem2'
+Info: onchip_mem2:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=Sistema_Epy_onchip_mem2 --dir=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0064_onchip_mem2_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0064_onchip_mem2_gen//Sistema_Epy_onchip_mem2_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_mem2: Done RTL generation for module 'Sistema_Epy_onchip_mem2'
+Info: onchip_mem2: "Sistema_Epy" instantiated altera_avalon_onchip_memory2 "onchip_mem2"
+Info: onchip_mem3: Starting RTL generation for module 'Sistema_Epy_onchip_mem3'
+Info: onchip_mem3:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=Sistema_Epy_onchip_mem3 --dir=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0065_onchip_mem3_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0065_onchip_mem3_gen//Sistema_Epy_onchip_mem3_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_mem3: Done RTL generation for module 'Sistema_Epy_onchip_mem3'
+Info: onchip_mem3: "Sistema_Epy" instantiated altera_avalon_onchip_memory2 "onchip_mem3"
+Info: uart_0: Starting RTL generation for module 'Sistema_Epy_uart_0'
+Info: uart_0:   Generation command is [exec C:/intelfpga/16.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga/16.1/quartus/bin64/perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- C:/intelfpga/16.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=Sistema_Epy_uart_0 --dir=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0066_uart_0_gen/ --quartus_dir=C:/intelfpga/16.1/quartus --verilog --config=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0066_uart_0_gen//Sistema_Epy_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: uart_0: Done RTL generation for module 'Sistema_Epy_uart_0'
+Info: uart_0: "Sistema_Epy" instantiated altera_avalon_uart "uart_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "Sistema_Epy" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "Sistema_Epy" instantiated altera_irq_mapper "irq_mapper"
+Info: avalon_st_adapter: "Sistema_Epy" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: rst_controller: "Sistema_Epy" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'Sistema_Epy_NIOS2_NN_cpu'
+Info: cpu:   Generation command is [exec C:/intelFPGA/16.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA/16.1/quartus/bin64//perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=Sistema_Epy_NIOS2_NN_cpu --dir=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0069_cpu_gen/ --quartus_bindir=C:/intelFPGA/16.1/quartus/bin64/ --verilog --config=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0069_cpu_gen//Sistema_Epy_NIOS2_NN_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2020.02.04 09:45:47 (*) Starting Nios II generation
+Info: cpu: # 2020.02.04 09:45:47 (*)   Checking for plaintext license.
+Info: cpu: # 2020.02.04 09:45:48 (*)   Plaintext license not found.
+Info: cpu: # 2020.02.04 09:45:48 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2020.02.04 09:45:48 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2020.02.04 09:45:48 (*)   Creating all objects for CPU
+Info: cpu: # 2020.02.04 09:45:49 (*)   Generating RTL from CPU objects
+Info: cpu: # 2020.02.04 09:45:49 (*)   Creating plain-text RTL
+Info: cpu: # 2020.02.04 09:45:50 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'Sistema_Epy_NIOS2_NN_cpu'
+Info: cpu: "NIOS2_NN" instantiated altera_nios2_gen2_unit "cpu"
+Info: cpu: Starting RTL generation for module 'Sistema_Epy_NIOS2_VGA_cpu'
+Info: cpu:   Generation command is [exec C:/intelFPGA/16.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA/16.1/quartus/bin64//perl/lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin/europa -I C:/intelfpga/16.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga/16.1/quartus/sopc_builder/bin -I C:/intelfpga/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga/16.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=Sistema_Epy_NIOS2_VGA_cpu --dir=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0070_cpu_gen/ --quartus_bindir=C:/intelFPGA/16.1/quartus/bin64/ --verilog --config=C:/Users/ESTUDI~1/AppData/Local/Temp/alt8296_6647090929581367789.dir/0070_cpu_gen//Sistema_Epy_NIOS2_VGA_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2020.02.04 09:45:51 (*) Starting Nios II generation
+Info: cpu: # 2020.02.04 09:45:51 (*)   Checking for plaintext license.
+Info: cpu: # 2020.02.04 09:45:52 (*)   Plaintext license not found.
+Info: cpu: # 2020.02.04 09:45:52 (*)   Checking for encrypted license (non-evaluation).
+Info: cpu: # 2020.02.04 09:45:52 (*)   Encrypted license found.  SOF will not be time-limited.
+Info: cpu: # 2020.02.04 09:45:52 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2020.02.04 09:45:52 (*)   Creating all objects for CPU
+Info: cpu: # 2020.02.04 09:45:52 (*)     Testbench
+Info: cpu: # 2020.02.04 09:45:53 (*)     Instruction decoding
+Info: cpu: # 2020.02.04 09:45:53 (*)       Instruction fields
+Info: cpu: # 2020.02.04 09:45:53 (*)       Instruction decodes
+Info: cpu: # 2020.02.04 09:45:53 (*)       Signals for RTL simulation waveforms
+Info: cpu: # 2020.02.04 09:45:53 (*)       Instruction controls
+Info: cpu: # 2020.02.04 09:45:53 (*)     Pipeline frontend
+Info: cpu: # 2020.02.04 09:45:53 (*)     Pipeline backend
+Info: cpu: # 2020.02.04 09:45:56 (*)   Generating RTL from CPU objects
+Info: cpu: # 2020.02.04 09:45:58 (*)   Creating encrypted RTL
+Info: cpu: # 2020.02.04 09:45:58 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'Sistema_Epy_NIOS2_VGA_cpu'
+Info: cpu: "NIOS2_VGA" instantiated altera_nios2_gen2_unit "cpu"
+Info: PIXEL_BUFFER_DMA_avalon_pixel_dma_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "PIXEL_BUFFER_DMA_avalon_pixel_dma_master_translator"
+Info: SDRAM_VGA_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "SDRAM_VGA_s1_translator"
+Info: PIXEL_BUFFER_DMA_avalon_pixel_dma_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "PIXEL_BUFFER_DMA_avalon_pixel_dma_master_agent"
+Info: SDRAM_VGA_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "SDRAM_VGA_s1_agent"
+Info: SDRAM_VGA_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "SDRAM_VGA_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
+Info: router_004: "mm_interconnect_0" instantiated altera_merlin_router "router_004"
+Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
+Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
+Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
+Info: router_009: "mm_interconnect_0" instantiated altera_merlin_router "router_009"
+Info: router_012: "mm_interconnect_0" instantiated altera_merlin_router "router_012"
+Info: NIOS2_VGA_data_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "NIOS2_VGA_data_master_limiter"
+Info: Reusing file C:/Users/Estudiante/Desktop/PROYECTO_V3/Sistema_Epy/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: SDRAM_VGA_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "SDRAM_VGA_s1_burst_adapter"
+Info: Reusing file C:/Users/Estudiante/Desktop/PROYECTO_V3/Sistema_Epy/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
+Info: cmd_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_003"
+Info: cmd_demux_004: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_004"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
+Info: Reusing file C:/Users/Estudiante/Desktop/PROYECTO_V3/Sistema_Epy/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
+Info: Reusing file C:/Users/Estudiante/Desktop/PROYECTO_V3/Sistema_Epy/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/Estudiante/Desktop/PROYECTO_V3/Sistema_Epy/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file C:/Users/Estudiante/Desktop/PROYECTO_V3/Sistema_Epy/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
+Info: Reusing file C:/Users/Estudiante/Desktop/PROYECTO_V3/Sistema_Epy/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_003"
+Info: Reusing file C:/Users/Estudiante/Desktop/PROYECTO_V3/Sistema_Epy/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: NIOS2_VGA_data_master_to_SDRAM_VGA_s1_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "NIOS2_VGA_data_master_to_SDRAM_VGA_s1_cmd_width_adapter"
+Info: Reusing file C:/Users/Estudiante/Desktop/PROYECTO_V3/Sistema_Epy/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/Estudiante/Desktop/PROYECTO_V3/Sistema_Epy/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
+Info: channel_adapter_0: "avalon_st_adapter" instantiated channel_adapter "channel_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: error_adapter_0: "avalon_st_adapter_001" instantiated error_adapter "error_adapter_0"
+Info: Sistema_Epy: Done "Sistema_Epy" with 59 modules, 103 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

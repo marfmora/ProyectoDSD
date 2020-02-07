@@ -1,0 +1,118 @@
+#include "altera_up_avalon_video_pixel_buffer_dma.h"
+#include <stdio.h>
+int i,j,ii,iii;
+int color;
+int COLOR1=0xFFE0,COLOR2=0xF800;
+
+
+
+int main () {
+
+int DatosP[]={0,1101, 1183, 25, 951, 1113, 27, 413, 917, 1042, 607};
+int DatosR[]={0,984, 1004, 648, 500, 928, 548, 1821, 489, 984, 390};
+
+
+int Mayor1=0;
+int Mayor2=0;
+for (ii=0; ii<10; ii++){
+	if (DatosP[ii]> Mayor2){
+		Mayor2=DatosP[ii];
+	   }
+}
+for (iii=0; iii<10; iii++){
+	if (DatosR[iii]> Mayor1){
+		Mayor1=DatosR[iii];
+	   }
+}
+
+
+printf("INICIO\n");
+alt_up_pixel_buffer_dma_dev *pixel_dev = NULL;
+pixel_dev =  alt_up_pixel_buffer_dma_open_dev("/dev/PIXEL_BUFFER_DMA");
+if(pixel_dev != NULL)
+	printf("Finish load device structure\nVGA\n\n");
+alt_up_pixel_buffer_dma_clear_screen(pixel_dev,0);
+
+for( i = 239; i >= 0; i = i - 1){
+	for(j = 0; j < 320; j = j + 1){
+		color = 0x0000;
+		alt_up_pixel_buffer_dma_draw(pixel_dev, color, j, i);
+	}
+}
+
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 5, 225, 310, 224, 0xFFFF, 0); //Horizontal
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 10, 10, 11, 238, 0xFFFF, 0); //Vertical
+
+
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 5, (220-25), 15, (220-26), 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 5, (220-50), 15, (220-50)-1, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 5, (220-75), 15, (220-75)-1, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 5, (220-100), 15, (220-100)-1, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 5, (220-125), 15, (220-125)-1, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 5, (220-150), 15, (220-150)-1, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 5, (220-175), 15, (220-175)-1, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 5, (220-200), 15, (220-200)-1, 0xFFFF, 0);
+
+
+
+
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 10, 220, 11, 230, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 44, 220, 45, 230, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 76, 220, 77, 230, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 108, 220, 109, 230, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 140, 220, 141, 230, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 172, 220, 173, 230, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 204, 220, 205, 230, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 236, 220, 237, 230, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 268, 220, 269, 230, 0xFFFF, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 295, 220, 296, 230, 0xFFFF, 0);
+
+
+
+
+//Datos Predichos
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 10, (220-DatosP[1]*240/Mayor2), 11,(220-DatosP[1]*240/Mayor2)+1, COLOR1, 0); //rojo
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 11, (220-DatosP[1]*240/Mayor2)+1, 44, (220-DatosP[2]*240/Mayor2), COLOR1, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 44, (220-DatosP[2]*240/Mayor2), 45, (220-DatosP[2]*240/Mayor2)+1, COLOR1, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 45, (220-DatosP[2]*240/Mayor2)+1, 76, (220-DatosP[3]*240/Mayor2), COLOR1, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 76,(220-DatosP[3]*240/Mayor2), 77, (220-DatosP[3]*240/Mayor2)+1, COLOR1, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 77,(220-DatosP[3]*240/Mayor2)+1, 108, (220-DatosP[4]*240/Mayor2), COLOR1, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 108,(220-DatosP[4]*240/Mayor2), 109, (220-DatosP[4]*240/Mayor2)+1, COLOR1, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 109, (220-DatosP[4]*240/Mayor2)+1, 140, (220-DatosP[5]*240/Mayor2), COLOR1, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 140,(220-DatosP[5]*240/Mayor2), 141, (220-DatosP[5]*240/Mayor2)+1, COLOR1, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 141,(220-DatosP[5]*240/Mayor2)+1, 172, (220-DatosP[6]*240/Mayor2), COLOR1, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 172,(220-DatosP[6]*240/Mayor2), 173, (220-DatosP[6]*240/Mayor2)+1, COLOR1, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 173,(220-DatosP[6]*240/Mayor2)+1, 204, (220-DatosP[7]*240/Mayor2), COLOR1, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 204, (220-DatosP[7]*240/Mayor2), 205, (220-DatosP[7]*240/Mayor2)+1, COLOR1, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 205,  (220-DatosP[7]*240/Mayor2)+1, 236,  (220-DatosP[8]*240/Mayor2), COLOR1, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 236,(220-DatosP[8]*240/Mayor2), 237, (220-DatosP[8]*240/Mayor2)+1, COLOR1, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 237,(220-DatosP[8]*240/Mayor2)+1, 268, (220-DatosP[9]*240/Mayor2), COLOR1, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 268, (220-DatosP[9]*240/Mayor2), 269, (220-DatosP[9]*240/Mayor2)+1, COLOR1, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 269,(220-DatosP[9]*240/Mayor2)+1, 295,(220-DatosP[10]*240/Mayor2), COLOR1, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 295, (220-DatosP[10]*240/Mayor2), 296, (220-DatosP[10]*240/Mayor2)+1, COLOR1, 0);
+
+
+//Datos Reales
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 10, (220-DatosR[1]*240/Mayor1), 11,(220-DatosR[1]*240/Mayor1)+1, COLOR2, 0); //rojo
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 11, (220-DatosR[1]*240/Mayor1)+1, 44, (220-DatosR[2]*240/Mayor1), COLOR2, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 44, (220-DatosR[2]*240/Mayor1), 45, (220-DatosR[2]*240/Mayor1)+1, COLOR2, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 45, (220-DatosR[2]*240/Mayor1)+1, 76, (220-DatosR[3]*240/Mayor1), COLOR2, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 76,(220-DatosR[3]*240/Mayor1), 77, (220-DatosR[3]*240/Mayor1)+1, COLOR2, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 77,(220-DatosR[3]*240/Mayor1)+1, 108, (220-DatosR[4]*240/Mayor1), COLOR2, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 108,(220-DatosR[4]*240/Mayor1), 109, (220-DatosR[4]*240/Mayor1)+1, COLOR2, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 109, (220-DatosR[4]*240/Mayor1)+1, 140, (220-DatosR[5]*240/Mayor1), COLOR2, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 140,(220-DatosR[5]*240/Mayor1), 141, (220-DatosR[5]*240/Mayor1)+1, COLOR2, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 141,(220-DatosR[5]*240/Mayor1)+1, 172, (220-DatosR[6]*240/Mayor1), COLOR2, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 172,(220-DatosR[6]*240/Mayor1), 173, (220-DatosR[6]*240/Mayor1)+1, COLOR2, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 173,(220-DatosR[6]*240/Mayor1)+1, 204, (220-DatosR[7]*240/Mayor1), COLOR2, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 204, (220-DatosR[7]*240/Mayor1), 205, (220-DatosR[7]*240/Mayor1)+1, COLOR2, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 205,  (220-DatosR[7]*240/Mayor1)+1, 236,  (220-DatosR[8]*240/Mayor1), COLOR2, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 236,(220-DatosR[8]*240/Mayor1), 237, (220-DatosR[8]*240/Mayor1)+1, COLOR2, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 237,(220-DatosR[8]*240/Mayor1)+1, 268, (220-DatosR[9]*240/Mayor1), COLOR2, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 268, (220-DatosR[9]*240/Mayor1), 269, (220-DatosR[9]*240/Mayor1)+1, COLOR2, 0);
+	alt_up_pixel_buffer_dma_draw_line (pixel_dev, 269,(220-DatosR[9]*240/Mayor1)+1, 295,(220-DatosR[10]*240/Mayor1), COLOR2, 0);
+alt_up_pixel_buffer_dma_draw_box (pixel_dev, 295, (220-DatosR[10]*240/Mayor1), 296, (220-DatosR[10]*240/Mayor1)+1, COLOR2, 0);
+
+
+printf("TERMINADO\n");
+}

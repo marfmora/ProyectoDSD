@@ -1,0 +1,43 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst Sistema_Epy.PIXEL_BUFFER_DMA -pg 1 -lvl 4 -y 390
+preplace inst Sistema_Epy.NIOS2_NN.clock_bridge -pg 1
+preplace inst Sistema_Epy.CLOCK_50 -pg 1 -lvl 2 -y 780
+preplace inst Sistema_Epy.NIOS2_NN -pg 1 -lvl 1 -y 100
+preplace inst Sistema_Epy -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst Sistema_Epy.NIOS2_NN.reset_bridge -pg 1
+preplace inst Sistema_Epy.NIOS2_VGA.reset_bridge -pg 1
+preplace inst Sistema_Epy.NIOS2_VGA -pg 1 -lvl 1 -y 480
+preplace inst Sistema_Epy.DUAL_CLOCK_FIFO -pg 1 -lvl 7 -y 580
+preplace inst Sistema_Epy.onchip_mem2 -pg 1 -lvl 4 -y 610
+preplace inst Sistema_Epy.SDRAM_VGA -pg 1 -lvl 4 -y 50
+preplace inst Sistema_Epy.SCALER -pg 1 -lvl 6 -y 560
+preplace inst Sistema_Epy.onchip_mem3 -pg 1 -lvl 4 -y 700
+preplace inst Sistema_Epy.uart_0 -pg 1 -lvl 4 -y 270
+preplace inst Sistema_Epy.JTAG_UART -pg 1 -lvl 3 -y 130
+preplace inst Sistema_Epy.TIMER -pg 1 -lvl 3 -y 260
+preplace inst Sistema_Epy.RGB_RESAMPLER -pg 1 -lvl 5 -y 540
+preplace inst Sistema_Epy.NIOS2_VGA.clock_bridge -pg 1
+preplace inst Sistema_Epy.NIOS2_NN.cpu -pg 1
+preplace inst Sistema_Epy.PLL -pg 1 -lvl 3 -y 760
+preplace inst Sistema_Epy.VGA -pg 1 -lvl 8 -y 680
+preplace inst Sistema_Epy.SYSTEM_ID_1 -pg 1 -lvl 4 -y 490
+preplace inst Sistema_Epy.NIOS2_VGA.cpu -pg 1
+preplace netloc POINT_TO_POINT<net_container>Sistema_Epy</net_container>(SLAVE)PLL.refclk,(MASTER)CLOCK_50.clk) 1 2 1 930
+preplace netloc POINT_TO_POINT<net_container>Sistema_Epy</net_container>(SLAVE)VGA.avalon_vga_sink,(MASTER)DUAL_CLOCK_FIFO.avalon_dc_buffer_source) 1 7 1 2560
+preplace netloc EXPORT<net_container>Sistema_Epy</net_container>(SLAVE)CLOCK_50.clk_in,(SLAVE)Sistema_Epy.clk) 1 0 2 NJ 790 NJ
+preplace netloc FAN_OUT<net_container>Sistema_Epy</net_container>(MASTER)PLL.outclk1,(SLAVE)VGA.clk,(SLAVE)DUAL_CLOCK_FIFO.clock_stream_out) 1 3 5 NJ 790 NJ 790 NJ 790 2250 710 N
+preplace netloc POINT_TO_POINT<net_container>Sistema_Epy</net_container>(MASTER)SCALER.avalon_scaler_source,(SLAVE)DUAL_CLOCK_FIFO.avalon_dc_buffer_sink) 1 6 1 N
+preplace netloc FAN_OUT<net_container>Sistema_Epy</net_container>(SLAVE)SCALER.clk,(SLAVE)NIOS2_VGA.clk,(SLAVE)SYSTEM_ID_1.clk,(SLAVE)RGB_RESAMPLER.clk,(MASTER)PLL.outclk0,(SLAVE)onchip_mem2.clk1,(SLAVE)uart_0.clk,(SLAVE)SDRAM_VGA.clk,(SLAVE)onchip_mem3.clk1,(SLAVE)TIMER.clk,(SLAVE)NIOS2_NN.clk,(SLAVE)PIXEL_BUFFER_DMA.clk,(SLAVE)DUAL_CLOCK_FIFO.clock_stream_in,(SLAVE)JTAG_UART.clk) 1 0 7 180 60 NJ 140 970 400 1270 580 1730 510 2010 550 2250
+preplace netloc POINT_TO_POINT<net_container>Sistema_Epy</net_container>(MASTER)RGB_RESAMPLER.avalon_rgb_source,(SLAVE)SCALER.avalon_scaler_sink) 1 5 1 N
+preplace netloc INTERCONNECT<net_container>Sistema_Epy</net_container>(SLAVE)JTAG_UART.irq,(MASTER)NIOS2_NN.irq,(SLAVE)TIMER.irq,(MASTER)NIOS2_VGA.irq) 1 1 2 580 290 930
+preplace netloc EXPORT<net_container>Sistema_Epy</net_container>(SLAVE)Sistema_Epy.sdram_wire,(SLAVE)SDRAM_VGA.wire) 1 0 4 NJ 40 NJ 120 NJ 120 NJ
+preplace netloc POINT_TO_POINT<net_container>Sistema_Epy</net_container>(MASTER)PIXEL_BUFFER_DMA.avalon_pixel_source,(SLAVE)RGB_RESAMPLER.avalon_rgb_sink) 1 4 1 1750
+preplace netloc EXPORT<net_container>Sistema_Epy</net_container>(MASTER)Sistema_Epy.clk_sdram,(MASTER)PLL.outclk2) 1 3 6 NJ 810 NJ 810 NJ 810 NJ 810 NJ 810 NJ
+preplace netloc INTERCONNECT<net_container>Sistema_Epy</net_container>(SLAVE)NIOS2_VGA.reset,(SLAVE)VGA.reset,(SLAVE)SYSTEM_ID_1.reset,(SLAVE)onchip_mem3.reset1,(SLAVE)uart_0.reset,(MASTER)NIOS2_VGA.debug_reset_request,(SLAVE)DUAL_CLOCK_FIFO.reset_stream_in,(SLAVE)PLL.reset,(SLAVE)JTAG_UART.reset,(SLAVE)SDRAM_VGA.reset,(MASTER)CLOCK_50.clk_reset,(SLAVE)RGB_RESAMPLER.reset,(SLAVE)NIOS2_NN.reset,(SLAVE)TIMER.reset,(SLAVE)PIXEL_BUFFER_DMA.reset,(SLAVE)SCALER.reset,(SLAVE)onchip_mem2.reset1,(SLAVE)DUAL_CLOCK_FIFO.reset_stream_out,(MASTER)NIOS2_NN.debug_reset_request) 1 0 8 220 440 620 530 950 530 1310 600 1790 530 1990 650 2230 730 2560
+preplace netloc EXPORT<net_container>Sistema_Epy</net_container>(SLAVE)Sistema_Epy.vga_external_interface,(SLAVE)VGA.external_interface) 1 0 8 NJ 400 NJ 400 NJ 510 NJ 830 NJ 490 NJ 490 NJ 490 NJ
+preplace netloc EXPORT<net_container>Sistema_Epy</net_container>(SLAVE)Sistema_Epy.uart,(SLAVE)uart_0.external_connection) 1 0 4 NJ 380 NJ 380 NJ 380 NJ
+preplace netloc EXPORT<net_container>Sistema_Epy</net_container>(SLAVE)Sistema_Epy.reset,(SLAVE)CLOCK_50.clk_in_reset) 1 0 2 NJ 810 NJ
+preplace netloc INTERCONNECT<net_container>Sistema_Epy</net_container>(SLAVE)NIOS2_VGA.debug_mem_slave,(MASTER)PIXEL_BUFFER_DMA.avalon_pixel_dma_master,(SLAVE)onchip_mem2.s1,(MASTER)NIOS2_NN.instruction_master,(MASTER)NIOS2_VGA.instruction_master,(SLAVE)SDRAM_VGA.s1,(MASTER)NIOS2_NN.data_master,(SLAVE)JTAG_UART.avalon_jtag_slave,(SLAVE)NIOS2_NN.debug_mem_slave,(SLAVE)onchip_mem3.s1,(SLAVE)PIXEL_BUFFER_DMA.avalon_control_slave,(SLAVE)SYSTEM_ID_1.control_slave,(SLAVE)TIMER.s1,(MASTER)NIOS2_VGA.data_master) 1 0 5 200 420 600 360 990 420 1330 480 1730
+levelinfo -pg 1 0 150 2870
+levelinfo -hier Sistema_Epy 160 340 760 1110 1420 1820 2040 2280 2630 2780

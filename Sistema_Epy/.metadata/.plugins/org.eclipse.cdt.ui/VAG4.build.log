@@ -1,0 +1,18 @@
+18:29:35 **** Incremental Build of configuration Nios II for project VAG4 ****
+make all 
+Info: Building ../VAG4_bsp/
+C:/intelFPGA/16.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../VAG4_bsp/
+[BSP build complete]
+Info: Compiling vga_out.c to obj/default/vga_out.o
+nios2-elf-gcc -xc -MP -MMD -c -I../VAG4_bsp//HAL/inc -I../VAG4_bsp/ -I../VAG4_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/vga_out.o vga_out.c
+Info: Linking VAG4.elf
+nios2-elf-g++  -T'../VAG4_bsp//linker.x' -msys-crt0='../VAG4_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../VAG4_bsp/  -msmallc  -Wl,-Map=VAG4.map   -O0 -g -Wall   -mno-hw-div -mhw-mul -mno-hw-mulx -mgpopt=global  -o VAG4.elf obj/default/vga_out.o -lm -msys-lib=m
+nios2-elf-insert VAG4.elf --thread_model hal --cpu_name NIOS2_VGA --qsys true --simulation_enabled false --id 0 --sidp 0x11080 --timestamp 1578005493 --stderr_dev JTAG_UART --stdin_dev JTAG_UART --stdout_dev JTAG_UART --sopc_system_name Sistema_Epy --quartus_project_dir "C:/Users/Estudiante/Desktop/PROYECTO_V3" --jdi ../..//output_files/proyecto.jdi --sopcinfo C:/Users/Estudiante/Desktop/PROYECTO_V3/software/VAG4_bsp/../../Sistema_Epy.sopcinfo
+Info: (VAG4.elf) 12 KBytes program size (code + initialized data).
+Info:            65534 KBytes free for stack + heap.
+Info: Creating VAG4.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source VAG4.elf >VAG4.objdump
+[VAG4 build complete]
+
+18:29:37 Build Finished (took 2s.313ms)
+

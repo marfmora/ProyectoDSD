@@ -1,0 +1,18 @@
+#include "altera_up_avalon_video_pixel_buffer_dma.h"
+#include <stdio.h>
+int i,j;
+int color;
+int main () {
+printf("INICIO\n");
+alt_up_pixel_buffer_dma_dev *pixel_dev = NULL;
+pixel_dev =  alt_up_pixel_buffer_dma_open_dev("/dev/PIXEL_BUFFER_DMA");
+if(pixel_dev != NULL)
+	printf("Finish load device structure\nVGA\n\n");
+for( i = 239; i >= 0; i = i - 1){
+	for(j = 0; j < 320; j = j + 1){
+		color = 0xFFFF;
+		alt_up_pixel_buffer_dma_draw(pixel_dev, color, j, i);
+	}
+}
+printf("TERMINADO\n");
+}

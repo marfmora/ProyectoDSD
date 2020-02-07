@@ -1,0 +1,1 @@
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) Sistema_Epy/Sistema_Epy.qip]
